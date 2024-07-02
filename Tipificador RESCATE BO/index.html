@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tipificador</title>
+  <link rel="stylesheet" href="./dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="dist/css/stilos.css">
+  
+
+</head>
+
+<body>
+  <div class="contenedor trans align-content-center  justify-content-center pt-3">
+    <form >
+      <div class="row ">
+        <div class=" form-group  col-sm-auto">
+          <label for="NumTitular">Nombre Asesor</label>
+          <input type="text" class="form-control trans" id="NomAgent" required>
+        </div>
+       
+      </div>
+
+        
+          <div class="row form-group align-content-center  justify-content-center">
+            <div class="col-sm-auto">
+              <button type="button" id="Tipificar" class="bttn" data-toggle="modal"
+                data-target="#exampleModal">Tipificar</button>
+            </div>
+          </div>
+        </form>
+        
+  
+</div>
+
+
+
+
+
+  <!-- Modal 1 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content trans ">
+        <div class="modal-header" id="color">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: rgb(255, 255, 255);">Tipificar</h5>
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body col-sm-auto ">
+          <h5 id="agendas" style="color: rgb(255, 255, 255);" ></h5>
+          
+          <form id="Formulario">
+            
+           
+            <div class="row">
+              <div class="col-sm " id="Motiv">
+                <label class="my-1 mr-2 " for="Motivo">Motivo de llamada</label>
+                <select class="custom-select my-1 mr-sm-2 trans" id="Motivo">
+                  <option selected value="0">...</option>
+                  <option value="1">Agendar</option>
+                  <option value="2">Quiebre</option>
+                  <option value="3">No Contacto</option>
+                </select>
+              </div>
+             
+            </div>
+
+          
+          
+            <div class="row pt-3">
+              <div class="col-sm" id="intentos">
+                <div class="custom-control form-check-inline  custom-switch ">
+                  <input type="checkbox" class="custom-control-input" id="inten">
+                  <label class="custom-control-label trans" for="inten" id="inte">6 INTENTOS</label>
+                </div>
+              </div>
+              <div class="col-sm" id="Formatod">
+                <div class="custom-control form-check-inline  custom-switch ">
+                  <input type="checkbox" class="custom-control-input" id="FD">
+                  <label class="custom-control-label trans" for="FD" id="f">Formatear Dirección</label>
+                </div>
+              </div>
+              <div class="col-sm" id="tec">
+                <div class="custom-control form-check-inline  custom-switch ">
+                  <input type="checkbox" class="custom-control-input " id="TEC">
+                  <label class="custom-control-label trans" id="TC" for="TEC"></label>
+                </div>
+              </div>
+              
+
+            </div>
+        
+          <div class="row pt-2">
+
+                <div class="col-sm" id="MotivoTec">
+                  <label for="Mtecnico">Motivo Técnico</label>
+                  <div class="form-group">
+
+                    <textarea class="form-control trans" id="Mtecnico"></textarea>
+                  </div>
+                </div>
+                <div class="col-sm " id="Musuariod">
+                  <label for="Musuario">Motivo Usuario</label>
+                  <div class="form-group">
+                    <textarea class="form-control trans" id="Musuario">Contesta indica que</textarea>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+              <div class="row" id="Titular">
+                <div class="col-sm" id="numt">
+                  <label for="NumTitular">Numero de Titular</label>
+                  <input type="text" class="form-control trans" id="NumTitular" autocomplete="off" required>
+                </div>
+                <div class="col-sm pt-2" id="nomt">
+                  <label for="NomTitular">Nombre de Titular</label>
+                  <input type="text" class="form-control trans" id="NomTitular" autocomplete="off" required>
+                </div>
+              </div>
+
+
+              <div class="row pt-2">
+                <div class=" col-sm" id="fecha">
+                  <label for="Fecha" class="form-label trans ">Fecha Agendamiento</label>
+                  <div class="input-group gap-3">
+                    <input type="date" class="form-control trans" id="Fecha">
+
+
+                    <select id="Franja" class="custom-select trans col-2" aria-label="">
+                      <option id="AM" value="AM">AM</option>
+                      <option id="PM" value="PM">PM</option>
+                    </select>
+                    <button type="button" id="button-addon1" class="btn btn1 btn-warning ">Pedir Cuota</button>
+                  </div>
+                </div>
+              </div>
+
+          
+
+              <div class="row" id="MoQuiebre">
+                <div class="col-sm">
+                  <label for="exampleDataList">Motivo Quiebre</label>
+                  <input class="form-control col-sm-auto trans" list="selectQE" id="exampleDataList"
+                    placeholder="Escribe el motivo">
+                  <datalist id="selectQE">
+
+
+                                          <option>IMPOSIBLE INSTALACION ZONA PROBLEMAS EN ORDEN PUBLICO</option>
+                                          <option>CAMBIO PLAN POR DECISION DEL CLIENTE</option>
+                                          <option>CLIENTE DESEA EL PRODUCTO PERO EN UNA FECHA POSTERIOR</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO / ELIGE LA COMPETENCIA</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO / DEMORAS EN LA INSTALACIÓN</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO / SITUACIÓN ECONOMICA</option>
+                                          <option>CLIENTE NO SOLICITO EL SERVICIO</option>
+                                          <option>CONDICIONES DE PREDIO NO APTAS PARA LA INSTALACIÓN</option>
+                                          <option>DESEA SERVICIO EN OTRA LINEA</option>
+                                          <option>INCUMPLIMIENTO CITA ATRIBUIBLE AL CLIENTE</option>
+                                          <option>LINEA SUSPENDIDA O EN MORA</option>
+                                          <option>CLIENTE NO RESIDE EN PREDIO DE INSTALACIÓN</option>
+                                          <option>PROBLEMAS PC CLIENTE</option>
+                                          <option>SIN PERMISOS PARA INSTALAR</option>
+                                          <option>YA TIENE SERVICIO MOVISTAR INSTALADO</option>
+                                          <option>NO SE LOGRO CONTACTO PARA AGENDAR</option>
+                                          <option>DIRECCIÓN ERRADA</option>
+                                          <option>LOCALIDAD ERRADA</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO POR RECLAMO NO SOLUCIONADO</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO / INCONFORMIDAD TARIFAS</option>
+                                          <option>CLIENTE DESEA TRASLADO EN UNA FECHA POSTERIOR</option>
+                                          <option>CLIENTE SOLICITO TRASLADO DE OTRO PRODUCTO</option>
+                                          <option>CLIENTE DESISTE DEL TRASLADO, SOLICITA RETIRO</option>
+                                          <option>CLIENTE DESISTE DEL TRASLADO, CONTINUA CON SERVICIO ACTUAL</option>
+                                          <option>CLIENTE SOLICITO OPERACIÓN COMERCIAL DIFERENTE</option>
+                                          <option>CLIENTE NO SOLICITO TRASLADO</option>
+                                          <option>PEDIDO DUPLICADO</option>
+                                          <option>DATOS DEL CLIENTE ERRADOS</option>
+                                          <option>CLIENTE DESISTE / INCONSISTENCIA EN LA OFERTA</option>
+                                          <option>CLIENTE SIN CAPACIDAD DE ENDEUDAMIENTO</option>
+                                          <option>CLIENTE SOLICITO OTRO TIPO DE EQUIPO</option>
+                                          <option>CLIENTE YA ADQUIRIDO EQUIPO</option>
+                                          <option>CLIENTE RECHAZA COBRO DE INSTALACIÓN</option>
+                                          <option>TV NO APTO PARA HD</option>
+                                          <option>SIN DISPONIBILIDAD DE EQUIPOS</option>
+                                          <option>CLIENTE SOLICITO OTRO TIPO DE EQUIPO</option>
+                                          <option>DIRECCIÓN SIN COMPLEMENTOS</option>
+                                          <option>PLAN ERRADO CLIENTE SOLICITO MAS DECOS</option>
+                                          <option>PLAN ERRADO CLIENTE SOLICITO MENOS DECOS</option>
+                                          <option>PLAN ERRADO OFERTA PRIMARIA</option>
+                                          <option>PLAN ERRADO CLIENTE SOLICITO TRASLADO</option>
+                                          <option>PLAN ERRADO OFERTA SUPLEMENTARIA</option>
+                                          <option>ERROR EN COMPLEMENTO</option>
+                                          <option>VIA PRINCIPAL ERRADA</option>
+                                          <option>NO EXISTE RED FTTH</option>
+                                          <option>CRUCE ERRADO</option>
+                                          <option>CLIENTE DESISTE DEL SERVICIO / RETENIDO POR OTRO OPERADOR</option>
+
+                                      </datalist>
+                  
+                  </div>
+                </div>
+
+
+
+                <div class="row" id="MoQuiebre1">
+                  <div class="col-sm">
+                    <label for="exampleDataList">Motivo Quiebre</label>
+                    <input class="form-control col-sm-auto trans" list="selectQE1" id="exampleDataList1"
+                      placeholder="Escribe el motivo">
+                    <datalist id="selectQE1">
+                      <option>CTO SATURADA</option>
+                      <option>FALTA DE APOYO PARA ACOMETIDA</option>
+                      <option>DISTANCIA EXCEDIDA (mas de 300 metros)</option>
+                      <option>NO EXISTE RED FTTH</option>
+                      <option>NO SE PERMITE INGRESO AL EQUIPO</option>
+                      <option>RECURSOS MAL APROVISIONADOS</option>
+                      <option>CRUCE DE VIA PRINCIPAL</option>
+                      <option>NO HAY RED SECUNDARIA</option>
+
+                    </datalist>
+                    
+                    </div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class=" col-sm" id="Formato">
+                      <label for="Fecha" class="form-label trans ">Formatear Dirección</label>
+                      <div class="input-group gap-3">
+                        <input type="text" class="form-control trans" id="direccion">
+                        <button type="button" id="formatear" class="btn btn1 btn-warning ">Formatear</button>
+                      </div>
+                    </div>
+                  </div>
+
+          </form>
+      
+      </div>
+      
+        
+      <div class="modal-footer">
+        <button type="button" id="limpiar" class="btn btn-outline-danger">Limpiar</button>
+        <button type="button" class="btn btn-secondary trans" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary trans" id="CopiarT">Copiar</button>
+      </div>
+    </div> 
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./dist/js/funciones.js"></script>
+  <script src="./dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./dist/js/sweetalert2@11.js"></script>
+</body>
+
+
+</html>
